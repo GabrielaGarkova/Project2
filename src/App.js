@@ -10,6 +10,28 @@ import Landmarks from "./pages/Landmarks";
 import Contacts from "./pages/Contacts";
 import Default from "./layouts/Default";
 
+import {useCurrentUser} from "./graphql/useRequest";
+
+const routes = [
+    {
+        path: '/',
+        element: <Home/>
+    },
+
+    {
+        path: '/Vacantion',
+        element: <Vacantion/>
+    },
+    {
+        path: '/Landmarks',
+        element: <Landmarks/>
+    },
+    {
+        path: '/Contacts',
+        element: <Contacts/>
+    },
+]
+
 function App() {
   return (
     <BrowserRouter>
