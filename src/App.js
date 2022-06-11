@@ -9,28 +9,7 @@ import Vacantion from "./pages/Vacantion";
 import Landmarks from "./pages/Landmarks";
 import Contacts from "./pages/Contacts";
 import Default from "./layouts/Default";
-
-import {useCurrentUser} from "./graphql/useRequest";
-
-const routes = [
-    {
-        path: '/',
-        element: <Home/>
-    },
-
-    {
-        path: '/Vacantion',
-        element: <Vacantion/>
-    },
-    {
-        path: '/Landmarks',
-        element: <Landmarks/>
-    },
-    {
-        path: '/Contacts',
-        element: <Contacts/>
-    },
-]
+import HotelDetails from "./pages/HotelDetails";
 
 function App() {
   return (
@@ -41,6 +20,7 @@ function App() {
         <Route path="/Vacantion" element={<Vacantion />} />
         <Route path="/landmarks" element={<Landmarks />} />
         <Route path="/contacts" element={<Contacts />} />
+        <Route path="/hotel/:id" element={<HotelDetails />} />
      </Routes>
     </BrowserRouter>
   );

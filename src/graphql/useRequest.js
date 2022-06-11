@@ -19,24 +19,34 @@ const graphQLClient = new GraphQLClient(API_URL, {
     }
 });
 
-export function useGetHotel() {
-    return useQuery("getHotel", async () => {
+export function useGetHotels() {
+    return useQuery("getHotels", async () => {
         return await graphQLClient.request(gql`
             query {
-                hotel {
+                hotels {
                     _id
                     name
                     city
                     type
                     star
                     image
-                    reviews {
-                        name
-                        city
-                        type
-                        star
-                        image
-                    }
+                }
+            }
+        `);
+    });
+}
+
+export function useGetHotel(id) {
+    return useQuery("getHotel", async () => {
+        return await graphQLClient.request(gql`
+            query {
+                hotel(_id: "${id}") {
+                    _id
+                    name
+                    city
+                    type
+                    star
+                    image
                 }
             }
         `);
